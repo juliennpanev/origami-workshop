@@ -34,10 +34,11 @@ class App extends Component{
         .then(posts => {
             this.setState({posts})
         })
-        console.log('posts are updapted in state')
+        
     }
 
     render() {
+        
         return(
             <div className={style.app}>
             <Header />

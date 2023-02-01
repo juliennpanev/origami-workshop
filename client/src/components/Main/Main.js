@@ -1,12 +1,22 @@
-import './Main.css'
+import './Main.css';
+import Post from '../Post/Post';
 
 const Main = (props) => {
     console.log(props.posts)
-    return(
-        
+    return (
+
         <main className="main-container">
             <h1>Some Heading</h1>
-            {props.posts.map(p => <p key={p.id}>{p.content}</p>)}
+
+            <div className='posts'>
+                {props.posts.map(p =>
+                    <Post key={p.id}
+                        title={p.title}
+                        description={p.description}
+                        author={p.author}
+                    />)}
+            </div>
+
         </main>
     );
 
