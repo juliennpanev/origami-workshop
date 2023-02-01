@@ -4,7 +4,7 @@ function Post(props) {
     return (
         
         <div className='post-container'>
-            <img src="/blue-origami-bird.png" alt="blue origami"></img>
+            <img src="/harry-potter-and-the-chambers-of-secrets.jpg" alt="blue origami"></img>
             <p className="post-title">{props.title}</p>
             <p className="post-description">{props.description}</p>
             <div>
