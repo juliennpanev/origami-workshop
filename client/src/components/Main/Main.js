@@ -2,7 +2,7 @@ import './Main.css';
 import Post from '../Post/Post';
 
 const Main = (props) => {
-    console.log(props.posts)
+    
     return (
 
         <main className="main-container">
@@ -11,6 +11,7 @@ const Main = (props) => {
             <div className='posts'>
                 {props.posts.map(p =>
                     <Post key={p.id}
+                        img={p.imageName}
                         title={p.title}
                         description={p.description}
                         author={p.author}

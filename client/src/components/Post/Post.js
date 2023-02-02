@@ -1,10 +1,12 @@
 import './Post.css'
 
+
 function Post(props) {
+    
     return (
         
         <div className='post-container'>
-            <img src="/harry-potter-and-the-chambers-of-secrets.jpg" alt="blue origami"></img>
+            <img src={props.img} alt="book cover"></img>
             <p className="post-title">{props.title}</p>
             <p className="post-description">{props.description}</p>
             <div>
@@ -13,7 +15,7 @@ function Post(props) {
                 </span>
             </div>
         </div>
-    )
+    );
         
 }
 

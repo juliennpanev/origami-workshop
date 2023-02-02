@@ -1,21 +1,37 @@
 
 import MenuItem from './MenuItem/MenuItem'
+import { useState } from 'react';
 import './Menu.css'
 
+
+const menuItems = [
+    { id: 'a', text: "Going to 1" },
+    { id: 'b', text: "Going to 2" },
+    { id: 'c', text: "Going to 3" },
+    { id: 'd', text: "Going to 4" },
+    { id: 'e', text: "Going to 5" },
+    { id: 'f', text: "Going to 6" },
+    { id: 'g', text: "Going to 7" },
+    { id: 'h', text: "Going to 8" }
+]
+
 const Menu = () => {
-    return(
+
+    const [ currentItem, setCurrentItem ] = useState();
+  
+
+    return (
         <aside className='menu'>
-            <MenuItem>Going to 1</MenuItem>
-            <MenuItem>Going to 2</MenuItem>
-            <MenuItem>Going to 3</MenuItem>
-            <MenuItem>Going to 4</MenuItem>
-            <MenuItem>Going to 5</MenuItem>
-            <MenuItem>Going to 6</MenuItem>
-            <MenuItem>Going to 7</MenuItem>
-            <MenuItem>Going to 8</MenuItem>
-            <MenuItem>Going to 9</MenuItem>
-            <MenuItem>Going to 10</MenuItem>
-            <MenuItem>Going to 11</MenuItem>
+            {menuItems.map(item =>
+                <MenuItem
+                    key={item.id}
+                    id={item.id}
+                    onClick={setCurrentItem}
+                >
+                    {item.text}
+                </MenuItem>
+
+            )}
         </aside>
     )
 }

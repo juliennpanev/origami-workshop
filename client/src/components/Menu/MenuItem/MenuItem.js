@@ -1,10 +1,13 @@
 import './MenuItem.css'
 
 const MenuItem = (props) => {
+
+   
+
     return (
 
         <li className="menu-item">
-            <a href="#">
+            <a href="#" onClick={() => props.onClick(props.id)}>
                 {props.children}
             </a>
         </li>

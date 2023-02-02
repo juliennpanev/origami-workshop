@@ -38,7 +38,7 @@ class App extends Component{
     }
 
     render() {
-        
+        console.log(this.state.posts)
         return(
             <div className={style.app}>
             <Header />
