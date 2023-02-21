@@ -32,7 +32,7 @@ nav .listItem:hover {
 }
 
 
-nav .listItem a {
+nav .listItem span {
     color: white;
     text-decoration: none;
 }

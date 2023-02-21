@@ -2,7 +2,7 @@
 function NavigationItem (props) {
     return(
         <li className="listItem">
-            <a href="#">{props.children}</a>
+            <span href="#">{props.children}</span>
         </li>
     );
 }

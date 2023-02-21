@@ -1,4 +1,9 @@
 import { Component } from 'react';
+import { Route, Link, NavLink, Redirect, Swith, Routes } from 'react-router-dom'
+
+import About from './components/About/About';
+import ContactUs from './components/ContactUs/ContactUs/ContactUs';
+
 import style from './App.module.css';
 import Header from './components/Header/Header';
 import Menu from './components/Menu/Menu'
@@ -43,26 +48,27 @@ class App extends Component {
     }
 
     getPosts() {
-        if(!this.state.selectedPost) {
+        if (!this.state.selectedPost) {
             return this.state.posts
         } else {
-            return [this.state.posts.find(x =>x.id == this.state.selectedPost)]
+            return [ this.state.posts.find(x => x.id == this.state.selectedPost) ]
         }
     }
 
     render() {
-        
+
         return (
             <div className={style.app}>
                 <Header />
                 <div className={style.container}>
-                    <Menu
-                        onMenuItemClick={this.onMenuItemClick.bind(this)}
-                    />
-                    <Main
-                        posts={this.getPosts()}
+                    <Menu onMenuItemClick={this.onMenuItemClick.bind(this)} />
+                    <Routes>
+                        <Route path='/' element={<Main posts={this.getPosts()} />} />
+                        <Route path='about' element={<About />}></Route>
+                        <Route path='contact-us' element={<ContactUs />} />
+                        <Route render={() => <h1>Default Router</h1>}/>
+                    </Routes>
 
-                    />
                 </div>
             </div>
         );
