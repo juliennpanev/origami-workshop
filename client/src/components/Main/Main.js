@@ -10,7 +10,8 @@ const Main = (props) => {
 
             <div className='posts'>
                 {props.posts.map(p =>
-                    <Post key={p.id}
+                    <Post 
+                        key={p.id}
                         img={p.imageName}
                         title={p.title}
                         description={p.description}
